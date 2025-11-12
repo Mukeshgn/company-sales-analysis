@@ -1,5 +1,5 @@
 ---
-# 🛒 Sales Analysis of Customers
+# 🛒 Company Sales Analysis
 ---
 
 ## 📘 Project Overview
