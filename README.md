@@ -80,10 +80,6 @@ ORDER BY total_revenue DESC;
 📊 Power BI Dashboards
 
 The DASHBOARD folder contains 4 interactive visual snapshots illustrating:
-Revenue Breakdown (by Gender, Age, Region)
-Discount Impact vs Spending
-Customer Segmentation (Loyal, New, Returning)
-Top Products & Shipping Insights
 
 <p align="center"> <img src="DASHBOARD/Home.jpg" alt="Dashboard 1" width="45%"> <img src="DASHBOARD/PAGE_1.jpg" alt="Dashboard 2" width="45%"> </p> <p align="center"> <img src="DASHBOARD/PAGE_2.jpg" alt="Dashboard 3" width="45%"> <img src="DASHBOARD/PAGE_4.jpg" alt="Dashboard 4" width="45%"> </p>
 
