@@ -1,5 +1,5 @@
 ---
-# 🛍️ Data Analytics Project — Shopping Analysis of a Customer
+# 🛍️ Shopping Analysis of a Customer
 ---
 
 ## 📘 Project Overview
