@@ -80,7 +80,7 @@ LIMIT 5;
 
 ---
 
-##🖼️ Visual Insights
+## 🖼️ Visual Insights
 🧮 Table Overview
 <p align="center"> <img src="Tables.jpg" alt="Data Model Tables" width="80%"> </p>
 📊 Power BI Dashboards
@@ -95,7 +95,7 @@ Top Products & Shipping Insights
 
 ---
 
-##🧠 Key Learnings
+## 🧠 Key Learnings
 
 Enhanced ability to integrate Python, SQL, and Power BI in a single analytics workflow.
 
@@ -107,7 +107,7 @@ Gained practical experience in end-to-end retail analytics.
 
 ---
 
-##📄 Documentation
+## 📄 Documentation
 
 Detailed reports and presentations are included for deeper insights:
 
@@ -127,21 +127,21 @@ These materials provide a complete view of the analytics process from raw data t
 
 ---
 
-##🧾 Conclusion
+## 🧾 Conclusion
 
 This project demonstrates how a data analyst can leverage Python, SQL, and Power BI to transform raw retail data into actionable business intelligence.
 It showcases data storytelling, analytical thinking, and dashboarding — essential skills for a Data Analyst / BI Developer.
 
 ---
 
-##⚠️ Disclaimer
+## ⚠️ Disclaimer
 
 All datasets and results are AI-generated and purely educational.
 This project is intended for learning and portfolio demonstration purposes.
 
 ---
 
-##👨‍💻 Author
+## 👨‍💻 Author
 
 Mukesh Gopi Nandh
 📧 mukeshudatha7@gmail.com
