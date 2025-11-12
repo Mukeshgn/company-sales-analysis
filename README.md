@@ -1,91 +1,85 @@
 ---
-# 🛍️ Shopping Analysis of a Customer
+# 🛒 Sales Analysis of Customers
 ---
 
 ## 📘 Project Overview
 
-This project simulates a real-world **retail analytics scenario**, analyzing how customers shop, what drives their purchases, and how discount, demographics, and subscription behavior affect sales.  
+This project analyzes **regional sales performance** to identify key revenue drivers, product trends, and profit variations.  
+It combines **Python-based Exploratory Data Analysis (EDA)** with an interactive **Power BI dashboard** to derive actionable business insights.
 
-It demonstrates an **end-to-end data analytics workflow** — from **data cleaning (Python)** and **data modeling (SQL)** to **visualization and storytelling (Power BI)**.
+The primary objective is to support **data-driven strategic decision-making** by uncovering how customer segments, products, and channels influence sales growth and profitability.
 
-> 🧾 Note: The dataset is **synthetic** and generated for educational and business simulation purposes.
+> 🧾 Note: All datasets are **synthetic and generated for educational purposes**.
 
 ---
 
 ## 🧩 Project Structure
-- **Data Preparation (Python)** – Cleaned and preprocessed raw sales data using pandas & NumPy.  
-- **Database Modeling (PostgreSQL)** – Structured the dataset into relational tables.  
-- **Exploratory Data Analysis (SQL)** – Performed queries to uncover customer insights and behavioral patterns.  
-- **Dashboard Visualization (Power BI)** – Designed an interactive report highlighting performance metrics and KPIs.  
-- **Report & Presentation** – Summarized findings in professional documentation and slides.  
+- **Data Preparation (Python)** – Cleaned and preprocessed data using pandas & NumPy.  
+- **EDA (Python)** – Performed trend, channel, and customer analysis through statistical and visual exploration.  
+- **Power BI Dashboard** – Designed a 4-page interactive dashboard for key performance tracking.  
+- **Business Insights** – Identified top-performing regions, customers, and improvement areas.  
+- **Documentation** – Compiled all insights into professional PDF and presentation reports.  
 
 ---
 
-## 🛠️ Tools & Technologies
+## 🛠️ Tech Stack
 | Tool / Technology | Purpose |
 |-------------------|----------|
-| **Python (pandas, NumPy)** | Data cleaning and preprocessing |
-| **PostgreSQL / SQLAlchemy** | Data storage, querying, and modeling |
-| **Power BI** | Visualization, dashboards, and storytelling |
-| **Excel** | Data validation and tabular exports |
-| **Git & GitHub** | Version control and sharing |
+| **Python (Pandas, Matplotlib, Seaborn)** | Data cleaning & EDA |
+| **Power BI** | KPI dashboards & visual analytics |
+| **Excel** | Data preparation & export |
+| **Git & GitHub** | Version control & project publishing |
 
 ---
 
 ## 🧱 Dataset Summary
-| Feature | Description |
-|----------|--------------|
-| **Records** | ~3,900 |
-| **Columns** | 18 |
-| **Data Types** | Customer, Transaction, and Behavioral Metrics |
-| **Missing Values** | 37 missing ratings handled with median imputation |
-| **Source** | Synthetic dataset for analytics learning |
+| Table | Description |
+|--------|-------------|
+| **Sales** | Transaction-level order data (product, quantity, revenue, profit) |
+| **Products** | Product details, category, and price |
+| **Customers** | Customer profiles, segments, and channels |
+| **Regions** | Regional mapping of customer sales |
+| **Budgets** | Financial targets for year-on-year comparison |
 
-Key fields include:  
-`customer_id`, `age`, `gender`, `location`, `subscription_status`, `product_name`, `category`, `purchase_amount`, `review_rating`, `shipping_type`, `discount_applied`.
+**Preprocessing Steps:**
+- Merged datasets on `product_id`, `customer_id`, and `region_id`.  
+- Removed duplicates and standardized naming conventions.  
+- Calculated derived metrics: `profit = revenue - cost` and `profit_margin_pct = (profit / revenue) * 100`.  
+- Verified completeness and accuracy post-merging.
 
 ---
 
 ## 📊 Business Problems Solved
-1. Identify **top-spending customers** and their demographic trends.  
-2. Evaluate **impact of discounts** on high-value buyers.  
-3. Discover **top-rated products** by customer satisfaction.  
-4. Compare **purchase behavior across shipping types**.  
-5. Analyze **subscriber vs non-subscriber revenue contribution**.  
-6. Identify **most discounted and profitable products**.  
-7. Segment customers into **New, Returning, and Loyal**.  
-8. Measure **repeat purchase correlation** with subscription status.  
-9. Track **revenue contribution by age group**.  
-10. Recommend strategies to increase **retention and loyalty**.
+1. Identify **top-performing regions and customers**.  
+2. Track **seasonal trends and monthly revenue cycles**.  
+3. Evaluate **channel-wise performance** (Wholesale, Distributor, Export).  
+4. Analyze **product profitability** and SKU concentration.  
+5. Segment customers by **revenue vs profit margin**.  
+6. Measure **average order value (AOV)** and customer clusters.  
+7. Derive **recommendations** for product mix and pricing optimization.  
 
 ---
 
-## 💻 Sample SQL Queries
+## 💻 Sample SQL 
 
 ```sql
--- 🧾 Total Revenue by Gender
-SELECT gender, SUM(purchase_amount) AS total_revenue
-FROM customers
-JOIN orders USING(customer_id)
-GROUP BY gender
+-- 💰 Total Sales by Channel
+SELECT channel, ROUND(SUM(revenue), 2) AS total_revenue
+FROM sales
+GROUP BY channel
 ORDER BY total_revenue DESC;
-
--- 🛒 Top 5 Products by Review Rating
-SELECT product_name, ROUND(AVG(review_rating), 2) AS avg_rating
-FROM orders
-GROUP BY product_name
-ORDER BY avg_rating DESC
-LIMIT 5;
 ```
 
 ---
 
 ## 🖼️ Visual Insights
+
 🧮 Table Overview
 <p align="center"> <img src="Tables.jpg" alt="Data Model Tables" width="80%"> </p>
+
 📊 Power BI Dashboards
 
-The DASHBOARD folder contains 4 interactive visual snapshots that illustrate:
+The DASHBOARD folder contains 4 interactive visual snapshots illustrating:
 Revenue Breakdown (by Gender, Age, Region)
 Discount Impact vs Spending
 Customer Segmentation (Loyal, New, Returning)
@@ -95,49 +89,57 @@ Top Products & Shipping Insights
 
 ---
 
-## 🧠 Key Learnings
+## 🧠 Key Insights
 
-Enhanced ability to integrate Python, SQL, and Power BI in a single analytics workflow.
+Pronounced Seasonality – Peaks in May–June; troughs in January and April.
+Product Concentration – Products #26 & #25 drive 25% of revenue.
+Channel Efficiency – Wholesale accounts for 54% of volume; Export offers ~38% higher margins.
+Regional Performance – West dominates sales; Northeast needs focused growth.
+Customer Mix – Aibox Company and State Ltd contribute the highest revenue shares.
 
-Improved understanding of customer segmentation and behavioral metrics.
+---
 
-Developed skills in data cleaning, visualization, and storytelling.
+## 💡 Business Recommendations
 
-Gained practical experience in end-to-end retail analytics.
+Launch seasonal promotions to smooth revenue volatility.
+Optimize SKU mix by doubling down on top performers.
+Incentivize Export channels to maximize margins.
+Expand regional investment in the Northeast.
+Track low-margin high-volume orders for renegotiation.
 
 ---
 
 ## 📄 Documentation
 
-Detailed reports and presentations are included for deeper insights:
+Comprehensive reports and dashboards are included:
 
 File	Description
-📘 REPORT – Shopping Analysis of Customers.pdf
-	Full report including SQL, Python, and Power BI insights
-📊 PPT – Shopping Analysis Presentation.pptx
-	Business presentation with dashboards and findings
+📘 REPORT — Sales Analysis of Customers.pdf
+	Complete project report with insights, visuals, and recommendations
+📊 PPT — Sales Analysis Presentation.pptx
+	Executive presentation summarizing dashboard findings
 🧾 Regional_Sales_Analysis.ipynb
-	Jupyter Notebook for Python data cleaning and transformation
-📈 Sales Analysis Dashboard.pbix
+	Python notebook for EDA and data cleaning
+📈 Sales Dashboard.pbix
 	Power BI dashboard file
 📊 Sales_data(EDA Exported).csv
-	Cleaned dataset exported for BI tools
+	Final cleaned dataset
 
-These materials provide a complete view of the analytics process from raw data to decision-ready insights.
+All files are linked directly for review or download via GitHub.
 
 ---
 
 ## 🧾 Conclusion
 
-This project demonstrates how a data analyst can leverage Python, SQL, and Power BI to transform raw retail data into actionable business intelligence.
-It showcases data storytelling, analytical thinking, and dashboarding — essential skills for a Data Analyst / BI Developer.
+This project demonstrates how data analytics and BI tools can transform raw sales data into actionable insights.
+It highlights a full pipeline — from data wrangling in Python to insightful Power BI dashboards — reflecting practical analytical expertise for real-world business cases.
 
 ---
 
 ## ⚠️ Disclaimer
 
-All datasets and results are AI-generated and purely educational.
-This project is intended for learning and portfolio demonstration purposes.
+All data and visuals are AI-generated and educational.
+This repository is designed for learning, demonstration, and portfolio showcase purposes only.
 
 ---
 
